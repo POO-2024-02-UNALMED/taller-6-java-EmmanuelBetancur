@@ -79,4 +79,33 @@ public class Vehiculo {
     public static void incrementarCamiones() {
         cantidadCamiones++;
     }
+
+    public int getPuertas() {
+        return puertas;
+    }
+
+    public void setPuertas(int puertas) {
+        this.puertas = puertas;
+    }
+
+    // Getter y Setter para el atributo 'traccion'
+    public String getTraccion() {
+        return traccion;
+    }
+
+    public void setTraccion(String traccion) {
+        this.traccion = traccion;
+    }
+
+    // Metodo para obtener el total de vehiculos (Automoviles, Camionetas y Camiones)
+    public static int getCantidadVehiculos() {
+        return cantidadAutomoviles + cantidadCamionetas + cantidadCamiones;
+    }
+
+    // Metodo para actualizar el total de vehiculos
+    public static void setCantidadVehiculos(int cantidad) {
+        cantidadAutomoviles = cantidad;
+        cantidadCamionetas = 0;
+        cantidadCamiones = 0;
+    }
 }
