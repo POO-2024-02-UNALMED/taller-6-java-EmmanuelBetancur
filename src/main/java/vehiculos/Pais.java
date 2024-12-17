@@ -17,11 +17,11 @@ public class Pais {
     }
 
     // Metodo para obtener el pais con mas ventas
-    public static String paisMasVendedor() {
+    public static Pais paisMasVendedor() {
         if (Vehiculo.ventasPorPaisEcuador > Vehiculo.ventasPorPaisJapon) {
-            return "Ecuador";
+            return new Pais("Ecuador");
         } else {
-            return "Japon";
+            return new Pais("Japon");
         }
     }
 }
