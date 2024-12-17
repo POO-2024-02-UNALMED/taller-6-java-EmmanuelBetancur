@@ -27,11 +27,11 @@ public class Fabricante {
     }
 
     // Metodo para obtener la fabrica con mas ventas
-    public static String fabricaMayorVentas() {
+    public static Fabricante fabricaMayorVentas() {
         if (Vehiculo.ventasPorFabricanteToyota > Vehiculo.ventasPorFabricanteRenault) {
-            return "Toyota";
+            return new Fabricante("Toyota",new Pais("Japon"));
         } else {
-            return "Renault";
+            return new Fabricante("Renault",new Pais("Ecuador"));
         }
     }
 }
