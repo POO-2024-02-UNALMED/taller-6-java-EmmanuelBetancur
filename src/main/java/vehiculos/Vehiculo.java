@@ -45,7 +45,7 @@ public class Vehiculo {
         }
 
         // Incrementar el numero total de vehiculos
-        cantidadAutomoviles++; 
+        incrementarAutomoviles();
     }
 
     // Metodos estaticos para obtener el conteo de vehiculos
@@ -63,5 +63,20 @@ public class Vehiculo {
         } else {
             return "Renault";
         }
+    }
+
+    // Metodo para incrementar el contador de automoviles
+    public static void incrementarAutomoviles() {
+        cantidadAutomoviles++;
+    }
+
+    // Metodo para incrementar el contador de camionetas
+    public static void incrementarCamionetas() {
+        cantidadCamionetas++;
+    }
+
+    // Metodo para incrementar el contador de camiones
+    public static void incrementarCamiones() {
+        cantidadCamiones++;
     }
 }
