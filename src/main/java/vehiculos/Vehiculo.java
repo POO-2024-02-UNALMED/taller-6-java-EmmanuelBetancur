@@ -57,6 +57,23 @@ public class Vehiculo {
         }
     }
 
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    // Getter y Setter para el atributo 'velocidadMaxima'
+    public int getVelocidadMaxima() {
+        return velocidadMaxima;
+    }
+
+    public void setVelocidadMaxima(int velocidadMaxima) {
+        this.velocidadMaxima = velocidadMaxima;
+    }
+
     public static String fabricaMayorVentas() {
         if (ventasPorFabricanteToyota > ventasPorFabricanteRenault) {
             return "Toyota";
