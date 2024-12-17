@@ -1,13 +1,13 @@
 package vehiculos;
-import java.util.Map;
 
 public class Pais {
-    private String nombre;
+    public String nombre;
 
     public Pais(String nombre) {
         this.nombre = nombre;
     }
 
+    // Getter y Setter
     public String getNombre() {
         return nombre;
     }
@@ -16,17 +16,12 @@ public class Pais {
         this.nombre = nombre;
     }
 
-
-public static String paisMasVendedor(Map<String, Integer> ventasPorPais) {
-        String paisMax = null;
-        int maxVentas = 0;
-        for (Map.Entry<String, Integer> entry : ventasPorPais.entrySet()) {
-            if (entry.getValue() > maxVentas) {
-                paisMax = entry.getKey();
-                maxVentas = entry.getValue();
-            }
+    // Metodo para obtener el pais con mas ventas
+    public static String paisMasVendedor() {
+        if (Vehiculo.ventasPorPaisEcuador > Vehiculo.ventasPorPaisJapon) {
+            return "Ecuador";
+        } else {
+            return "Japon";
         }
-        return paisMax; 
     }
-
 }

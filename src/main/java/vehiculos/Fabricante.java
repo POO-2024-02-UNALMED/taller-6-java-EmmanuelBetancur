@@ -1,15 +1,15 @@
 package vehiculos;
-import java.util.Map;
 
 public class Fabricante {
-    private String nombre;
-    private Pais pais;
+    public String nombre;
+    public Pais pais;
 
     public Fabricante(String nombre, Pais pais) {
         this.nombre = nombre;
         this.pais = pais;
     }
 
+    // Getter y Setter
     public String getNombre() {
         return nombre;
     }
@@ -26,18 +26,12 @@ public class Fabricante {
         this.pais = pais;
     }
 
-    public static String fabricaMayorVentas(Map<String, Integer> ventasPorFabricante) {
-    String fabricaMax = null;
-    int maxVentas = 0;
-
-    for (Map.Entry<String, Integer> entry : ventasPorFabricante.entrySet()) {
-        if (entry.getValue() > maxVentas) {
-            fabricaMax = entry.getKey(); 
-            maxVentas = entry.getValue(); 
+    // Metodo para obtener la fabrica con mas ventas
+    public static String fabricaMayorVentas() {
+        if (Vehiculo.ventasPorFabricanteToyota > Vehiculo.ventasPorFabricanteRenault) {
+            return "Toyota";
+        } else {
+            return "Renault";
         }
     }
-   
-    return fabricaMax;
-}
-
 }

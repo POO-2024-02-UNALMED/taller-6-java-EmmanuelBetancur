@@ -1,24 +1,24 @@
 package vehiculos;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Vehiculo {
-    private String placa;
-    private int puertas;
-    private int velocidadMaxima;
-    private String nombre;
-    private double precio;
-    private double peso;
-    private String traccion;
-    private Fabricante fabricante;
-    
-    private static int cantidadVehiculos = 0;
-    private static int cantidadAutomoviles = 0;
-    private static int cantidadCamionetas = 0;
-    private static int cantidadCamiones = 0;
+    public String placa;
+    public int puertas;
+    public int velocidadMaxima;
+    public String nombre;
+    public double precio;
+    public double peso;
+    public String traccion;
+    public Fabricante fabricante;
 
-    private static Map<String, Integer> ventasPorPais = new HashMap<>();
-    private static Map<String, Integer> ventasPorFabricante = new HashMap<>();
+    public static int cantidadAutomoviles = 0;
+    public static int cantidadCamionetas = 0;
+    public static int cantidadCamiones = 0;
+
+    // Contadores de ventas por pais y por fabricante
+    public static int ventasPorPaisEcuador = 0;
+    public static int ventasPorPaisJapon = 0;
+    public static int ventasPorFabricanteToyota = 0;
+    public static int ventasPorFabricanteRenault = 0;
 
     public Vehiculo(String placa, int puertas, int velocidadMaxima, String nombre, double precio, double peso,
                     String traccion, Fabricante fabricante) {
@@ -30,115 +30,38 @@ public class Vehiculo {
         this.peso = peso;
         this.traccion = traccion;
         this.fabricante = fabricante;
-        cantidadVehiculos++;
-        
-        // Registrar ventas
-        ventasPorPais.put(fabricante.getPais().getNombre(),
-                ventasPorPais.getOrDefault(fabricante.getPais().getNombre(), 0) + 1);
-        
-        ventasPorFabricante.put(fabricante.getNombre(),
-                ventasPorFabricante.getOrDefault(fabricante.getNombre(), 0) + 1);
+
+        // Actualizar el contador de ventas por pais y por fabricante
+        if (fabricante.getPais().getNombre().equals("Ecuador")) {
+            ventasPorPaisEcuador++;
+        } else if (fabricante.getPais().getNombre().equals("Japon")) {
+            ventasPorPaisJapon++;
+        }
+
+        if (fabricante.getNombre().equals("Toyota")) {
+            ventasPorFabricanteToyota++;
+        } else if (fabricante.getNombre().equals("Renault")) {
+            ventasPorFabricanteRenault++;
+        }
+
+        // Incrementar el numero total de vehiculos
+        cantidadAutomoviles++; 
     }
 
-    public static String vehiculosPorTipo() {
-        return "Automoviles: " + cantidadAutomoviles + "\n" +
-               "Camionetas: " + cantidadCamionetas + "\n" +
-               "Camiones: " + cantidadCamiones;
-    }
-
-     protected static void incrementarAutomoviles() {
-        cantidadAutomoviles++; // Control de acceso mediante metodo
-     }
-
-     protected static void incrementarCamiones() {
-        cantidadCamiones++; // Control de acceso mediante metodo
-     }
-
-     protected static void incrementarCamionetas() {
-        cantidadCamionetas++; // Control de acceso mediante metodo
-     }
-
-     public static int getCantidadAutomoviles() {
-        return cantidadAutomoviles;
-    }
-
+    // Metodos estaticos para obtener el conteo de vehiculos
     public static String paisMasVendedor() {
-        return ventasPorPais.entrySet().stream()
-                .max(Map.Entry.comparingByValue())
-                .map(Map.Entry::getKey)
-                .orElse("No hay ventas registradas");
+        if (ventasPorPaisEcuador > ventasPorPaisJapon) {
+            return "Ecuador";
+        } else {
+            return "Japon";
+        }
     }
 
     public static String fabricaMayorVentas() {
-        return ventasPorFabricante.entrySet().stream()
-                .max(Map.Entry.comparingByValue())
-                .map(Map.Entry::getKey)
-                .orElse("No hay ventas registradas");
+        if (ventasPorFabricanteToyota > ventasPorFabricanteRenault) {
+            return "Toyota";
+        } else {
+            return "Renault";
+        }
     }
-
-     public String getPlaca() {
-        return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-
-    public int getPuertas() {
-        return puertas;
-    }
-
-    public void setPuertas(int puertas) {
-        this.puertas = puertas;
-    }
-
-    public int getVelocidadMaxima() {
-        return velocidadMaxima;
-    }
-
-    public void setVelocidadMaxima(int velocidadMaxima) {
-        this.velocidadMaxima = velocidadMaxima;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(double peso) {
-        this.peso = peso;
-    }
-
-    public String getTraccion() {
-        return traccion;
-    }
-
-    public void setTraccion(String traccion) {
-        this.traccion = traccion;
-    }
-
-    public Fabricante getFabricante() {
-        return fabricante;
-    }
-
-    public void setFabricante(Fabricante fabricante) {
-        this.fabricante = fabricante;
-    }
-
-
 }
