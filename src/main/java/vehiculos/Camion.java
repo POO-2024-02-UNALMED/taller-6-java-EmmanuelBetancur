@@ -13,10 +13,6 @@ public class Camion extends Vehiculo {
         incrementarCamiones();
     }
 
-    public void incrementarCamiones(){
-        cantidadCamiones++;
-    }
-
     public int getEjes() {
         return ejes;
     }
