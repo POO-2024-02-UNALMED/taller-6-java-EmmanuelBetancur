@@ -1,4 +1,5 @@
 package vehiculos;
+import java.util.Map;
 
 public class Fabricante {
     private String nombre;
@@ -24,4 +25,17 @@ public class Fabricante {
     public void setPais(Pais pais) {
         this.pais = pais;
     }
+
+    public static String fabricaMayorVentas(Map<String, Integer> ventasPorFabricante) {
+    String fabricaMax = null;
+    int maxVentas = 0;
+
+    for (Map.Entry<String, Integer> entry : ventasPorFabricante.entrySet()) {
+        if (entry.getValue() > maxVentas) {
+            fabricaMax = entry.getKey();  // Guarda el nombre de la fábrica con más ventas
+            maxVentas = entry.getValue(); // Actualiza el número máximo de ventas
+        }
+    }
+   
+    return fabricaMax;
 }
