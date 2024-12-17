@@ -46,6 +46,14 @@ public class Vehiculo {
                "Camiones: " + cantidadCamiones;
     }
 
+     protected static void incrementarAutomoviles() {
+        cantidadAutomoviles++; // Control de acceso mediante método
+     }
+
+     public static int getCantidadAutomoviles() {
+        return cantidadAutomoviles;
+    }
+
     public static String paisMasVendedor() {
         return ventasPorPais.entrySet().stream()
                 .max(Map.Entry.comparingByValue())
@@ -59,10 +67,6 @@ public class Vehiculo {
                 .map(Map.Entry::getKey)
                 .orElse("No hay ventas registradas");
     }
-
-    protected static void incrementarAutomoviles() {
-    cantidadAutomoviles++;
-}
 
 
 }
