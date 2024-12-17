@@ -59,4 +59,9 @@ public class Vehiculo {
                 .map(Map.Entry::getKey)
                 .orElse("No hay ventas registradas");
     }
+
+    protected static void incrementarAutomoviles() {
+    cantidadAutomoviles++;
+}
+
 }
