@@ -26,7 +26,7 @@ public static String paisMasVendedor(Map<String, Integer> ventasPorPais) {
                 maxVentas = entry.getValue();
             }
         }
-        return paisMax; // Retorna el país con más ventas
+        return paisMax; 
     }
 
 }
