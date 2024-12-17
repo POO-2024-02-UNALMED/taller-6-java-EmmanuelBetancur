@@ -47,7 +47,7 @@ public class Vehiculo {
     }
 
      protected static void incrementarAutomoviles() {
-        cantidadAutomoviles++; // Control de acceso mediante método
+        cantidadAutomoviles++; // Control de acceso mediante metodo
      }
 
      public static int getCantidadAutomoviles() {
