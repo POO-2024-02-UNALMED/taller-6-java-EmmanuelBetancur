@@ -32,8 +32,8 @@ public class Fabricante {
 
     for (Map.Entry<String, Integer> entry : ventasPorFabricante.entrySet()) {
         if (entry.getValue() > maxVentas) {
-            fabricaMax = entry.getKey();  // Guarda el nombre de la fábrica con más ventas
-            maxVentas = entry.getValue(); // Actualiza el número máximo de ventas
+            fabricaMax = entry.getKey(); 
+            maxVentas = entry.getValue(); 
         }
     }
    
