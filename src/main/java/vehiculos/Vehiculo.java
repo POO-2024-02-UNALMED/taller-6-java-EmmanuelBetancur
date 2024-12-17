@@ -13,12 +13,14 @@ public class Vehiculo {
     public static int cantidadAutomoviles = 0;
     public static int cantidadCamionetas = 0;
     public static int cantidadCamiones = 0;
+    public static int cantidadVehiculos = 0;
 
     // Contadores de ventas por pais y por fabricante
     public static int ventasPorPaisEcuador = 0;
     public static int ventasPorPaisJapon = 0;
     public static int ventasPorFabricanteToyota = 0;
     public static int ventasPorFabricanteRenault = 0;
+    
 
     public Vehiculo(String placa, int puertas, int velocidadMaxima, String nombre, double precio, double peso,
                     String traccion, Fabricante fabricante) {
@@ -30,6 +32,7 @@ public class Vehiculo {
         this.peso = peso;
         this.traccion = traccion;
         this.fabricante = fabricante;
+        Vehiculo.cantidadVehiculos++;
 
         // Actualizar el contador de ventas por pais y por fabricante
         if (fabricante.getPais().getNombre().equals("Ecuador")) {
@@ -116,14 +119,12 @@ public class Vehiculo {
 
     // Metodo para obtener el total de vehiculos (Automoviles, Camionetas y Camiones)
     public static int getCantidadVehiculos() {
-        return cantidadAutomoviles + cantidadCamionetas + cantidadCamiones;
+        return Vehiculo.cantidadVehiculos;
     }
 
     // Metodo para actualizar el total de vehiculos
     public static void setCantidadVehiculos(int cantidad) {
-        cantidadAutomoviles = cantidad;
-        cantidadCamionetas = 0;
-        cantidadCamiones = 0;
+        Vehiculo.cantidadVehiculos = cantidad;
     }
 
       public String getNombre() {
