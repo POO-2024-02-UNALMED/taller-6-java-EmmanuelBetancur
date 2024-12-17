@@ -125,4 +125,17 @@ public class Vehiculo {
         cantidadCamionetas = 0;
         cantidadCamiones = 0;
     }
+
+      public String getNombre() {
+        return nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
 }
