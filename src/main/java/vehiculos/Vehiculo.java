@@ -1,6 +1,4 @@
 package vehiculos;
-from Fabricante import Fabricante;
-
 import java.util.HashMap;
 import java.util.Map;
 
