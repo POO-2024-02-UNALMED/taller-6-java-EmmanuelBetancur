@@ -20,7 +20,7 @@ public class Automovil extends Vehiculo {
                 ", Peso=" + peso +  // Accede directamente al atributo 'peso'
                 ", Traccion='" + traccion + '\'' +  // Accede directamente al atributo 'traccion'
                 ", Puertas=" + puertas +  // Accede directamente al atributo 'puertas'
-                ", Puestos=" + puestos +  // Atributo específico de Automovil
+                ", Puestos=" + puestos +  // Atributo especifico de Automovil
                 ", Fabricante=" + fabricante.getNombre() +  // Accede al fabricante
                 ", Pais=" + fabricante.getPais().getNombre() +  // Accede al pais del fabricante
                 '}';
